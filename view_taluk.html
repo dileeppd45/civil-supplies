@@ -1,0 +1,42 @@
+
+
+
+
+{% extends 'admin_header.html' %}
+{% block content %}
+
+<div class="container" align="center" style=" min-height:50vh; margin-top:100px; margin-bottom: 75px;">
+
+    <section >
+        <br>
+        <h5 style=" float:left; "><a href="../view_district">Back</a></h5>
+        <br><br><br>
+<div class="col p-2 bg-info container">
+  <h3>Viewing Taluk</h3>
+</div>
+<br>
+<div class="container">
+  <table  class="table">
+    <tr>
+        <td >SL NO: </td>
+      <td>NAME:</td>
+      <td >RATION:</td>
+        <td></td>
+    </tr>
+{% for data in taluk %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+        <td>{{ data.2 }}</td>
+      <td><a href="../view_ration/{{ data.0 }}">Approved Shops</a></td>
+        <td><a href="../view_ration_pending/{{data.0}}" >Pending Shops</a></td>
+
+    </tr>
+{% endfor %}
+  </table>
+</div>
+
+    </section>
+
+</div>
+
+{% endblock %}

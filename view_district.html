@@ -1,0 +1,38 @@
+
+
+
+
+{% extends 'admin_header.html' %}
+{% block content %}
+
+<div class="container" align="center" style=" min-height:50vh; margin-top:100px; margin-bottom: 75px;">
+
+    <section id="register">
+<div class="col p-2 bg-info container">
+  <h3>Viewing District</h3>
+</div>
+<br>
+<div class="container">
+  <table  class="table">
+    <tr>
+        <td >SL NO: </td>
+      <td>NAME:</td>
+      <td colspan="2">TALUK:</td>
+        <td></td>
+    </tr>
+{% for data in district %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+        <td>{{ data.1 }}</td>
+      <td><a href="../view_taluk/{{ data.0 }}">View</a></td>
+        <td><a href="../add_taluk/{{data.0}}">Add</a></td>
+    </tr>
+{% endfor %}
+  </table>
+</div>
+
+    </section>
+
+</div>
+
+{% endblock %}

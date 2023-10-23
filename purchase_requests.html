@@ -1,0 +1,38 @@
+
+{% extends 'ration_header.html' %}
+{% block content %}
+
+
+<div class="container" align="center" style=" min-height:50vh; margin-top:100px; margin-bottom: 75px;">
+
+    <section >
+
+<div class="col p-2 bg-info container">
+  <h3>Viewing  Purchase Requests </h3>
+</div>
+<br>
+
+<div class="container">
+  <table  class="table">
+    <tr>
+        <td >SL NO: </td>
+        <td>USER ID:</td>
+
+        <TH></TH>
+
+    </tr>
+{% for data in l %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+        <td>{{ data}}</td>
+      <td><a href="../make_bill/{{ data }}">Make Bill</a></td>
+
+    </tr>
+{% endfor %}
+  </table>
+</div>
+
+    </section>
+
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'admin_header.html' %}
+{% block content %}
+<div class="container" align="center" style=" min-height:50vh; margin-top:100px; margin-bottom: 75px;">
+
+    <section >
+
+<div class="col p-2 bg-info container">
+  <h3>Edit Card Items</h3>
+</div>
+<br>
+<div class="container">
+  <table class="table">
+    <form action="../card_items_edit" method="post" enctype="multipart/form-data" >
+      {% csrf_token %}
+
+    <tr>
+      <td>NAME:</td>
+      <td><input type="text" name="name" value="{{item.1}}" style="opacity:0.6; width:250px; height:35px; "required ></td>
+    </tr>
+    <tr>
+      <td>QUANTITY:</td>
+      <td><input type="number" name="quantity" value="{{item.2}}"  style="opacity:0.6; width:250px; height:35px; "required ></td>
+    </tr>
+    <tr>
+      <td>PRISE:</td>
+      <td><input min="1" type="number" name="prise" value="{{item.5}}"  style="opacity:0.6; width:250px; height:35px; "required ></td>
+    </tr>
+
+
+    <tr>
+      <td>CARD TYPE:</td>
+      <td>
+          <select name="card_type" required>
+              {% for i in card_type %}
+              <option value="{{i.0}}">{{i.1}}</option>
+              {% endfor %}
+          </select>
+      </td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+      <td><input name="Submit" type="submit" id="Submit" value="Add" ></td>
+    </tr>
+    </form>
+  </table>
+</div>
+    </section>
+</div>
+{% endblock %}

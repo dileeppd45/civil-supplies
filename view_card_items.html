@@ -1,0 +1,72 @@
+{% extends 'admin_header.html' %}
+{% block content %}
+
+<div class="container" align="center" style=" min-height:50vh; margin-top:100px; margin-bottom: 75px;">
+
+    <section >
+
+<div class="col p-2 bg-info container">
+  <h3>Viewing Apl Card Items</h3>
+</div>
+<br>
+<div class="container">
+  <table  class="table">
+    <tr>
+        <td >SL NO: </td>
+      <td>ITEM NAME:</td>
+        <td>QUANTITY</td>
+        <td>PRISE</td>
+        <td>CARD TYPE</td>
+    </tr>
+{% for data in apl %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+        <td>{{ data.1 }}</td>
+        <td>{{ data.2 }}</td>
+        <td>{{ data.5 }}</td>
+        <td>{{ data.6 }}</td>
+      <td><a href="../edit_card_item/{{ data.0 }}">Edit</a></td>
+        <td><a href="#delete_card_item/{{data.0}}" >Delete</a></td>
+
+    </tr>
+{% endfor %}
+  </table>
+</div>
+
+    </section>
+
+        <section >
+
+<div class="col p-2 bg-info container">
+  <h3>Viewing  Bpl Card Items</h3>
+</div>
+<br>
+<div class="container">
+  <table  class="table">
+    <tr>
+        <td >SL NO: </td>
+      <td>ITEM NAME:</td>
+        <td>QUANTITY</td>
+        <td>PRISE</td>
+        <td>CARD TYPE</td>
+    </tr>
+{% for data in bpl %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+        <td>{{ data.1 }}</td>
+        <td>{{ data.2 }}</td>
+        <td>{{ data.5 }}</td>
+        <td>{{ data.6 }}</td>
+      <td><a href="../edit_card_item/{{ data.0 }}">Edit</a></td>
+        <td><a href="#delete_card_item/{{data.0}}" >Delete</a></td>
+
+    </tr>
+{% endfor %}
+  </table>
+</div>
+
+    </section>
+
+</div>
+
+{% endblock %}

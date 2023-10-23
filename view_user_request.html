@@ -1,0 +1,47 @@
+
+{% extends 'ration_header.html' %}
+{% block content %}
+
+
+<div class="container" align="center" style=" min-height:50vh; margin-top:100px; margin-bottom: 75px;">
+
+    <section >
+
+<div class="col p-2 bg-info container">
+  <h3>Viewing User Requests.. </h3>
+</div>
+<br>
+<div class="container">
+  <table  class="table">
+    <tr>
+        <td >SL NO: </td>
+        <td>RATION ID:</td>
+        <TD>NAME:</TD>
+        <TD>CARD</TD>
+      <td>ADDRESS:</td>
+      <td >PHONE:</td>
+        <td>EMAIL:</td>
+        <TH></TH>
+
+
+    </tr>
+{% for data in data %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+        <td>{{ data.0}}</td>
+        <td>{{ data.1 }}</td>
+        <td>{{ data.9 }}</td>
+        <td>{{ data.2 }}</td>
+        <td>{{ data.3 }}</td>
+        <td>{{ data.4 }}</td>
+      <td><a href="../approve_user/{{ data.0 }}">Approve</a></td>
+
+    </tr>
+{% endfor %}
+  </table>
+</div>
+
+    </section>
+
+</div>
+{% endblock %}

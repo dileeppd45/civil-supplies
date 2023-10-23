@@ -1,0 +1,30 @@
+
+{% extends 'register_header.html' %}
+{% block content %}
+
+<div class="container" align="center" style=" min-height:50vh; margin-top:100px; margin-bottom: 75px;">
+<section id="register">
+<form action="../shop_register" method="POST"  enctype="multipart/form-data">
+    {% csrf_token %}
+    <h2 class="text-success center"><b style="color:gold;">Ration Shop</b><br> Registration</h2>
+    <div class="center">
+        <table>
+                <input type="hidden" value="{{id}}" name="id">
+            <tr><label class="text-success" style="float:left; padding-left:15px;"><b>Shop Address</b></label></tr>
+            <tr><input type="text" placeholder="Enter Address" name="address" required></tr>
+            <tr><label class="text-success" style="float:left; padding-left:15px;"><b>Phone Number</b></label></tr>
+            <tr><input type="text" placeholder="Enter Phone Number" name="phone"  required></tr>
+            <tr><label class="text-success" style="float:left; padding-left:15px;"><b>Email</b></label></tr>
+            <tr><input type="text" placeholder="Enter Email" name="email"  placeholder="Enter your email" required></tr>
+            <tr><label class="text-success" style="float:left; padding-left:15px;"><b>Password</b></label></tr>
+            <tr><input type="password" placeholder="Enter pasword" name="psw" ></tr>
+            <tr><br></tr>
+            <tr><input type="submit" class="btn btn-success" value="Register"></tr>
+        </table>
+    </div>
+</form>
+</section>
+</div>
+
+
+{% endblock %}

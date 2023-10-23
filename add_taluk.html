@@ -1,0 +1,35 @@
+
+{% extends 'admin_header.html' %}
+{% block content %}
+<div class="container" align="center" style=" min-height:50vh; margin-top:100px; margin-bottom: 75px;">
+
+    <section >
+  <br>
+        <h5 style=" float:left; "><a href="../view_district">Back</a></h5>
+        <br><br><br>
+<div class="col p-2 bg-info container">
+  <h3>Add Taluk</h3>
+</div>
+<br>
+<div class="container">
+  <table class="table">
+    <form action="../taluk_add" method="post" enctype="multipart/form-data" >
+      {% csrf_token %}
+
+    <tr>
+      <td>NAME:</td>
+        <input type="hidden" value="{{id}}" name="id">
+      <td><input type="text" name="name"  style="opacity:0.6; width:250px; height:35px; "required ></td>
+    </tr>
+
+
+    <tr>
+      <td>&nbsp;</td>
+      <td><input name="Submit" type="submit" id="Submit" value="Add" ></td>
+    </tr>
+    </form>
+  </table>
+</div>
+    </section>
+</div>
+{% endblock %}

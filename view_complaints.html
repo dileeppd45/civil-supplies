@@ -1,0 +1,66 @@
+{% extends 'admin_header.html' %}
+{% block content %}
+<div class="container" align="center" style=" min-height:50vh; margin-top:100px; margin-bottom: 75px;">
+
+    <section >
+
+<div class="col p-2 bg-info container">
+  <h3>Viewing Pending Complaints</h3>
+</div>
+<br>
+<div class="container">
+  <table  class="table">
+    <tr>
+        <td >SL NO: </td>
+        <td>USER:</td>
+        <td>COMPLAINT DATE:</td>
+        <td>COMPLAINT:</td>
+        <td>REPLY:</td>
+    </tr>
+{% for data in data %}
+    <tr>
+        <form action="../send_reply" method="post">
+            {% csrf_token %}
+      <td>{{ forloop.counter }}</td>
+        <td>{{ data.1 }}</td>
+        <td>{{ data.2 }}</td>
+        <td>{{ data.4 }}</td>
+        <td><input type="text" name="reply" required></td>
+        <input type="hidden" name="compid" value="{{data.0}}">
+        <td><input type="submit" value="Send"></td>
+            </form>
+    </tr>
+{% endfor %}
+  </table>
+</div>
+    </section>
+        <section >
+
+<div class="col p-2 bg-info container">
+  <h3>Viewing Replied Complaints</h3>
+</div>
+<br>
+<div class="container">
+  <table  class="table">
+    <tr>
+        <td >SL NO: </td>
+        <td>USER:</td>
+        <td>COMPLAINT DATE:</td>
+        <td>COMPLAINT:</td>
+        <td>REPLIED:</td>
+        <td></td>
+    </tr>
+{% for data in data1 %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+        <td>{{ data.1 }}</td>
+        <td>{{ data.2 }}</td>
+        <td>{{ data.4 }}</td>
+        <td>{{ data.5 }}</td>
+    </tr>
+{% endfor %}
+  </table>
+</div>
+    </section>
+</div>
+{% endblock %}
