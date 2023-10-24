@@ -80,7 +80,7 @@ DATABASES = {
     'default': {
         'NAME': 'aghosh_civil_supplies',
         'ENGINE': 'django.db.backends.mysql',
-        'USER': 'aghosh',
+        'USER': '#####',
         'PASSWORD': '######',
         'HOST': 'master.herosite.pro',
         'PORT': '3306',
